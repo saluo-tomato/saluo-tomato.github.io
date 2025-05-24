@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>MySQL基础知识 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="MySQL启动与关闭：12net start mysql80  net stop mysql80">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL基础知识">
+<meta property="og:url" content="http://example.com/2025/05/24/MySQL/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="MySQL启动与关闭：12net start mysql80  net stop mysql80">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-05-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-05-19T12:46:40.303Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-MySQL" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/05/24/MySQL/" class="article-date">
+  <time class="dt-published" datetime="2025-05-23T16:00:00.000Z" itemprop="datePublished">2025-05-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      MySQL基础知识
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="MySQL启动与关闭："><a href="#MySQL启动与关闭：" class="headerlink" title="MySQL启动与关闭："></a>MySQL启动与关闭：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net start mysql80  </span><br><span class="line">net stop mysql80   </span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h4 id="MySQL客户端连接："><a href="#MySQL客户端连接：" class="headerlink" title="MySQL客户端连接："></a>MySQL客户端连接：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql [-h 127.0.0.1] [-p 3306] -u root -p</span><br></pre></td></tr></table></figure>
+<h4 id="DDL"><a href="#DDL" class="headerlink" title="DDL:"></a>DDL:</h4><ul>
+<li>数据库操作：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">show databases;  </span><br><span class="line">create database 数据库名;  </span><br><span class="line">use 数据库名;</span><br><span class="line"><span class="keyword">select</span> database();</span><br><span class="line">drop database 数据库名;</span><br></pre></td></tr></table></figure></li>
+<li>表操作：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br><span class="line">create table 表名 (字段 字段类型, 字段 字段类型);</span><br><span class="line">desc 表名;</span><br><span class="line">show create table 表名;</span><br><span class="line">alter table 表名 add/modify/change/drop/rename to;</span><br><span class="line">drop table 表名;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="DML"><a href="#DML" class="headerlink" title="DML"></a>DML</h4><ul>
+<li>添加数据<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名 (字段1, 字段2, ...) values (值1, 值2, ...) [(值1, 值2,...)...];</span><br><span class="line">``</span><br><span class="line">* 修改数据</span><br><span class="line">``` bash</span><br><span class="line">update 表名 <span class="built_in">set</span> 字段1 = 值1, 字段2 = 值2 [<span class="built_in">where</span> 条件];</span><br></pre></td></tr></table></figure></li>
+<li>删除数据<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from 表名[<span class="built_in">where</span> 条件];</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="DQL"><a href="#DQL" class="headerlink" title="DQL"></a>DQL</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段列表 </span><br><span class="line">from 表名</span><br><span class="line"><span class="built_in">where</span> 条件列表</span><br><span class="line">group by 分组字段列表</span><br><span class="line">having 分组后条件列表</span><br><span class="line">order by 排序字段列表</span><br><span class="line"><span class="built_in">limit</span> 分页参数</span><br></pre></td></tr></table></figure>
+<h4 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h4><ul>
+<li>用户管理：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create user <span class="string">&#x27;用户名&#x27;</span>@<span class="string">&#x27;主机名&#x27;</span> identified by <span class="string">&#x27;密码&#x27;</span>;</span><br><span class="line">alter user <span class="string">&#x27;用户名&#x27;</span>@<span class="string">&#x27;主机名&#x27;</span> identified with masql_native_password by <span class="string">&#x27;密码&#x27;</span>;</span><br><span class="line">drop user <span class="string">&#x27;用户名&#x27;</span>@<span class="string">&#x27;主机名&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li>权限管理：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">show grants <span class="keyword">for</span> <span class="string">&#x27;用户名&#x27;</span>@<span class="string">&#x27;主机名&#x27;</span>;</span><br><span class="line">grant 权限列表 on 数据库名.表名 to <span class="string">&#x27;用户名&#x27;</span>@<span class="string">&#x27;主机名&#x27;</span>;</span><br><span class="line">revoke 权限列表 on 数据库名.表名 from 数据库名.表名;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/05/24/MySQL/" data-id="cmav1dru3000078b53qu39arb" data-title="MySQL基础知识" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2025/05/17/git%E7%9F%A5%E8%AF%86%E7%82%B9/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">git知识点</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/05/24/MySQL/">MySQL基础知识</a>
+          </li>
+        
+          <li>
+            <a href="/2025/05/17/git%E7%9F%A5%E8%AF%86%E7%82%B9/">git知识点</a>
+          </li>
+        
+          <li>
+            <a href="/2025/01/17/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
